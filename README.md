@@ -341,7 +341,7 @@ console.log(wepy.$store.getState().counter.num)
 
 
 
-##wepy2
+###  wepy2
 
 $preload 无法使用  可适当转变
 ```
