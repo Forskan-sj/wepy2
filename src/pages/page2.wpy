@@ -1,0 +1,157 @@
+<style lang="less">
+  input {
+    border: 1rpx solid #ccc;
+    display: inline-block;
+    width: 200rpx;
+    border-radius: 5rpx;
+  }
+  .info {
+    padding-right: 10rpx;
+  }
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userinfo-avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+  }
+
+  .userinfo-nickname {
+    color: #aaa;
+  }
+  .slide {
+    width: 640rpx;
+    display: flex;
+    border: 1rpx solid #ccc;
+    font-size: 28rpx;
+    align-items: center;
+    box-sizing: border-box;
+    .left {
+      width: 750rpx;
+      padding: 20rpx;
+    }
+    .right {
+      display: flex;
+      .right-item {
+        padding: 20rpx 30rpx;
+        background-color: red;
+        color: #fff;
+      }
+    }
+  }
+  page{
+    height: 100%;
+  }
+  .container{
+    height: 100%;
+  }
+  swiper{
+    background: #aaa;
+    width: 100%;
+    height: 100%;
+  }
+  swiper video{
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<wxs module="m1" lang="babel">
+const getTime = (time) => {
+  let date = getDate(time);
+  let hour = date.getHours();
+  let mins = date.getMinutes();
+  let sec = date.getSeconds();
+  let milli = date.getMilliseconds();
+  return `${hour}:${mins}:${sec}.${milli}`;
+}
+module.exports.getTime = getTime;
+</wxs>
+<template>
+  <div class="container">
+    <div class="gobakc" @tap="goback">back</div>
+    <!--toast /-->
+    <!-- <swiper indicator-dots="{{false}}"
+      vertical="{{true}}"
+      autoplay="{{false}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <video src="{{item.url}}" id="myVideo" autoplay="{{item.play}}" object-fit="contain" controls style="width:{{deviceinfo.windowWidth}}px;height:{{deviceinfo.screenHeight}}px">
+          </video>
+        </swiper-item>
+      </block>
+    </swiper> -->
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import eventHub from '../common/eventHub';
+  import { mapState } from '@wepy/x';
+  import store from '../store';
+  import testMixin from '../mixins/test'
+
+  wepy.page({
+    store,
+    config: {
+      navigationBarTitleText: 'test'
+    },
+
+    hooks: {
+      // Page 级别 hook, 只对当前 Page 的 setData 生效。
+      'before-setData': function (dirty) {
+        if (Math.random() < 0.2) {
+          console.log('setData canceled');
+          return false; // Cancel setData
+        }
+        dirty.time = +new Date();
+        return dirty;
+      }
+    },
+
+ 
+
+    mixins: [testMixin],
+
+    data: {
+      
+    },
+
+    computed: {
+      ...mapState([ 'counter' ]),
+      testcomputed () {
+        return 'computed - ' + this.mynum;
+      }
+    },
+
+    methods: {
+      goback() {
+        this.$back()
+      }
+    },
+
+    created (id, param) {
+    },
+    onPrefetch(data) {
+      console.log('prefetch' + data);
+    },
+    onLoad(id) {
+      console.log(decodeURIComponent(id.param), JSON.parse(decodeURIComponent(id.param)));
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: 'WePY 2.0 Feature Demo',
+    usingComponents: {
+      panel: '~@/components/panel',
+      counter: '~counter',
+      list: '../components/list',
+      group: '../components/group',
+      "slide-view": "module:miniprogram-slide-view",
+    }
+}
+</config>
