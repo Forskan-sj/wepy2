@@ -39,9 +39,6 @@ function fs(type) {
 
 _core["default"].page({
   store: _store["default"],
-  config: {
-    navigationBarTitleText: 'test'
-  },
   hooks: {
     // Page 级别 hook, 只对当前 Page 的 setData 生效。
     'before-setData': function beforeSetData(dirty) {
@@ -117,8 +114,8 @@ _core["default"].page({
   }),
   methods: {
     jump: function jump(obj) {
-      console.log(this, obj, this.$navigate); // this.$preload('test', {ss: 'contest', a: 'asdfasdf'})
-
+      // console.log(this, obj, this.$navigate);
+      // this.$preload('test', {ss: 'contest', a: 'asdfasdf'})
       this.$navigate('page2', {
         param: JSON.stringify({
           a: '1',
@@ -188,14 +185,16 @@ _core["default"].page({
     //     console.log(res);
     //   }
     // })
-    console.log(this.$store.state.counter);
+    // console.log(this.$store.state.counter);
     (0, _index.getUserInfo)({
       id: 1
     }).then(function (res) {
       console.log(res);
     });
 
-    _core["default"].$wx('getSystemInfo').then(function (res) {// console.log(res);
+    _core["default"].$wx('getSystemInfo').then(function (res) {
+      // console.log(res);
+      _core["default"].$store.commit('setDeviceInfo', res);
     });
 
     var self = this;
@@ -209,71 +208,79 @@ _core["default"].page({
     //     self.userInfo = res.userInfo;
     //   }
     // });
+    // this.$store.commit('set_share_uid_from', 3412)
+    // console.log(this.$store.state.counter);
+  },
+  onPullDownRefresh: function onPullDownRefresh() {
+    // this.getalldata();
+    // this.$store.commit('increment')
+    // console.log(this.$store.state.counter);
+    wx.stopPullDownRefresh();
   }
-}, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"8-88":["index-emit"]}}, handlers: {'8-81': {"tap": function proxy () {
+}, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleViewTap($event)
       })();
     
-  }},'8-82': {"tap": function proxy () {
+  }},'10-19': {"tap": function proxy () {
     
     var _vm=this;
       return (function () {
         _vm.currentTime = +new Date()
       })();
     
-  }},'8-83': {"tap": function proxy () {
+  }},'10-20': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.mixintap($event)
       })();
     
-  }},'8-84': {"tap": function proxy () {
+  }},'10-21': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.communicate($event)
       })();
     
-  }},'8-85': {"tap": function proxy () {
+  }},'10-22': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.tap($event)
       })();
     
-  }},'8-86': {"tap": function proxy () {
+  }},'10-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.request($event)
       })();
     
-  }},'8-87': {"tap": function proxy () {
+  }},'10-24': {"tap": function proxy () {
     
     var _vm=this;
       return (function () {
         _vm.mynum++
       })();
     
-  }},'8-88': {"index-emit": function proxy () {
+  }},'10-25': {"index-emit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.counterEmit($event)
       })();
     
-  }},'8-89': {"tap": function proxy () {
+  }},'10-26': {"tap": function proxy () {
     
     var _vm=this;
       return (function () {
         _vm.jump({a: '1', b: false, c: [1,2]})
       })();
     
-  }}}, models: {'9': {
+  }}}, models: {'2': {
       type: "input",
       expr: "inputmodel",
       handler: function set ($v) {
@@ -281,70 +288,638 @@ _core["default"].page({
         _vm.inputmodel = $v;
       
     }
-    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"8-88":["index-emit"]}}, handlers: {'8-81': {"tap": function proxy () {
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleViewTap($event)
       })();
     
-  }},'8-82': {"tap": function proxy () {
+  }},'10-19': {"tap": function proxy () {
     
     var _vm=this;
       return (function () {
         _vm.currentTime = +new Date()
       })();
     
-  }},'8-83': {"tap": function proxy () {
+  }},'10-20': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.mixintap($event)
       })();
     
-  }},'8-84': {"tap": function proxy () {
+  }},'10-21': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.communicate($event)
       })();
     
-  }},'8-85': {"tap": function proxy () {
+  }},'10-22': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.tap($event)
       })();
     
-  }},'8-86': {"tap": function proxy () {
+  }},'10-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.request($event)
       })();
     
-  }},'8-87': {"tap": function proxy () {
+  }},'10-24': {"tap": function proxy () {
     
     var _vm=this;
       return (function () {
         _vm.mynum++
       })();
     
-  }},'8-88': {"index-emit": function proxy () {
+  }},'10-25': {"index-emit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.counterEmit($event)
       })();
     
-  }},'8-89': {"tap": function proxy () {
+  }},'10-26': {"tap": function proxy () {
     
     var _vm=this;
       return (function () {
         _vm.jump({a: '1', b: false, c: [1,2]})
       })();
     
-  }}}, models: {'9': {
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
+      type: "input",
+      expr: "inputmodel",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputmodel = $v;
+      
+    }
+    }} }, {info: {"components":{"list":{"path":"..\\components\\wepy-list"},"group":{"path":"..\\components\\group"},"panel":{"path":"..\\components\\panel"},"counter":{"path":"..\\components\\counter"},"slide-view":{"path":"..\\$vendor\\miniprogram-slide-view\\miniprogram_dist\\index"}},"on":{"10-25":["index-emit"]}}, handlers: {'10-18': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleViewTap($event)
+      })();
+    
+  }},'10-19': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.currentTime = +new Date()
+      })();
+    
+  }},'10-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.mixintap($event)
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.communicate($event)
+      })();
+    
+  }},'10-22': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.tap($event)
+      })();
+    
+  }},'10-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.request($event)
+      })();
+    
+  }},'10-24': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.mynum++
+      })();
+    
+  }},'10-25': {"index-emit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.counterEmit($event)
+      })();
+    
+  }},'10-26': {"tap": function proxy () {
+    
+    var _vm=this;
+      return (function () {
+        _vm.jump({a: '1', b: false, c: [1,2]})
+      })();
+    
+  }}}, models: {'2': {
       type: "input",
       expr: "inputmodel",
       handler: function set ($v) {

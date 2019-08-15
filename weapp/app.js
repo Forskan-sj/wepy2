@@ -6,6 +6,8 @@ var _core = _interopRequireDefault(require('vendor.js')(1));
 
 var _eventHub = _interopRequireDefault(require('common/eventHub.js'));
 
+var _store = _interopRequireDefault(require('store/index.js'));
+
 var _x = _interopRequireDefault(require('vendor.js')(2));
 
 var _wxapi = _interopRequireDefault(require('utils/wxapi.js'));
@@ -20,6 +22,8 @@ _core["default"].use(_x["default"]);
 
 _core["default"].$eventHub = _eventHub["default"];
 _core["default"].$wx = _wxapi["default"];
+_core["default"].$ = require('utils/utils.js');
+_core["default"].$store = _store["default"];
 
 _core["default"].app({
   hooks: {
@@ -79,4 +83,4 @@ _core["default"].app({
       return testAsync;
     }()
   }
-}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1});
+}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1});

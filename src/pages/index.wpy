@@ -189,10 +189,6 @@ function fs(type) {
 
   wepy.page({
     store,
-    config: {
-      navigationBarTitleText: 'test'
-    },
-
     hooks: {
       // Page 级别 hook, 只对当前 Page 的 setData 生效。
       'before-setData': function (dirty) {
@@ -288,7 +284,7 @@ function fs(type) {
 
     methods: {
       jump(obj) {
-        console.log(this, obj, this.$navigate);
+        // console.log(this, obj, this.$navigate);
         // this.$preload('test', {ss: 'contest', a: 'asdfasdf'})
         this.$navigate('page2', {param: JSON.stringify({a: '1', b: 'sdf', c: [1, 2]})})
       },
@@ -348,12 +344,13 @@ function fs(type) {
       //     console.log(res);
       //   }
       // })
-      console.log(this.$store.state.counter);
+      // console.log(this.$store.state.counter);
       getUserInfo({id: 1}).then((res) => {
         console.log(res);
       })
       wepy.$wx('getSystemInfo').then((res) => {
         // console.log(res);
+        wepy.$store.commit('setDeviceInfo', res)
       })
       let self = this
       self.currentTime = +new Date(); 
@@ -369,13 +366,21 @@ function fs(type) {
       //     self.userInfo = res.userInfo;
       //   }
       // });
-      
+      // this.$store.commit('set_share_uid_from', 3412)
+      // console.log(this.$store.state.counter);
+    },
+    onPullDownRefresh: function () {
+      // this.getalldata();
+      // this.$store.commit('increment')
+      // console.log(this.$store.state.counter);
+      wx.stopPullDownRefresh();
     }
   });
 </script>
 <config>
 {
-    navigationBarTitleText: 'WePY 2.0 Feature Demo',
+    navigationBarTitleText: 'test',
+    "enablePullDownRefresh": true,
     usingComponents: {
       panel: '~@/components/panel',
       counter: '~counter',

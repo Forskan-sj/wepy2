@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = request;
 
-var _utils = require('utils.js');
+var _store = _interopRequireDefault(require('../store/index.js'));
 
 var _md = _interopRequireDefault(require('md5.js'));
 
@@ -16,6 +16,9 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var $ = require('utils.js'); // import { reLogin } from '../api'
+
 
 // const baseUrl = 'https://m_college.quansuwangluo.com/api/app/'
 var baseUrl = 'https://devlmzg.jinrijianlou.com/';
@@ -32,20 +35,32 @@ function request(param) {
   });
   return new Promise(function (resolve, reject) {
     wx.hideLoading();
-    param.data.PHPSESSID = (0, _utils.getCache)('sid');
-    param.data.form_ids = getFormIds();
+    param.data.PHPSESSID = _store["default"].state.sid;
+
+    if (getFormIds()) {
+      param.data.form_ids = getFormIds();
+    } // deviceInfo为对象，md5加密报错，故此先行移除，加密之后再添加
+
+
+    var te = param.data.deviceInfo ? param.data.deviceInfo : '';
+    delete param.data.deviceInfo;
     param.data = md5Sign(param.data);
+
+    if (te) {
+      param.data.deviceInfo = te;
+    }
+
     wx.request(_objectSpread({}, param, {
       success: function success(res) {
-        if (!res.status) {
+        if (!res.data.status) {
           checkFailStatus(res.data, check);
         } else {
           resolve(res.data);
         }
       },
       fail: function fail(res) {
-        console.log('网络错误');
-        reject(res);
+        $.confirm();
+        reject(res.data);
       },
       complete: function complete() {
         wx.stopPullDownRefresh();
@@ -55,7 +70,24 @@ function request(param) {
 }
 
 function getFormIds() {
-  return [];
+  var formIds = _store["default"].state.formIds;
+
+  if (formIds) {
+    var formIdArr = formIds.split(',');
+
+    if (formIdArr.length > 5) {
+      var formids_pre = formIdArr.slice(0, 5);
+      formIds = formids_pre.join(',');
+
+      _store["default"].commit('setFormIds', formIdArr.slice(5).join(','));
+
+      return formIds;
+    } else {
+      _store["default"].commit('setFormIds', '');
+    }
+  }
+
+  return '';
 }
 
 function md5Sign(param) {
@@ -83,9 +115,15 @@ function md5Sign(param) {
 
 function checkFailStatus(res, check) {
   if ((res.info == "请先登录" || res.info == "授权已过期") && check) {
-    console.log('授权');
+    wx.navigateTo({
+      url: '/pages/login/shouquan' + (_store["default"].state.share_uid_from ? '?share_uid=' + _store["default"].state.share_uid_from : '')
+    });
   } else if (res.info == "请先绑定手机号") {
-    console.log('绑定手机号');
+    $.confirm('为了确保您的账户安全和提供更好的服务,平台需要您绑定手机号', function () {
+      wx.navigateTo({
+        url: '/pages/user-bindmobile/user-bindmobile'
+      });
+    });
   } else if (res.info == "商品不存在或者已经下架") {
     hideloading();
     var tt = getCurrentPages().length;
@@ -93,16 +131,20 @@ function checkFailStatus(res, check) {
       showCancel: false,
       title: res.info,
       content: '',
-      success: function success(res) {// if (tt == 1) {
-        //   wx.switchTab({
-        //     url: '/pages/index/index',
-        //   })
-        // } else {
-        //   wx.navigateBack({
-        //     delta: 1,
-        //   })
-        // }
+      success: function success(res) {
+        if (tt == 1) {
+          wx.switchTab({
+            url: '/pages/index/index'
+          });
+        } else {
+          wx.navigateBack({
+            delta: 1
+          });
+        }
       }
     });
+  } else {
+    console.log(res);
+    $.confirm(res.info, function () {});
   }
 }

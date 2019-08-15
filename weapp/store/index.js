@@ -7,11 +7,23 @@ exports["default"] = void 0;
 
 var _x = _interopRequireDefault(require('../vendor.js')(2));
 
+var _core = _interopRequireDefault(require('../vendor.js')(1));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+_core["default"].use(_x["default"]);
 
 var _default = new _x["default"].Store({
   state: {
-    counter: 0
+    counter: 0,
+    formIds: '',
+    sid: '',
+    share_uid_from: '',
+    // 从分享链接进来的uid
+    userInfo: {},
+    // 用户信息
+    deviceInfo: {} // 设备信息
+
   },
   mutations: {
     increment: function increment(state) {
@@ -19,6 +31,21 @@ var _default = new _x["default"].Store({
     },
     decrement: function decrement(state) {
       state.counter--;
+    },
+    setFormIds: function setFormIds(state, val) {
+      state.formIds = val;
+    },
+    setSID: function setSID(state, val) {
+      state.sid = val;
+    },
+    setUserInfo: function setUserInfo(state, val) {
+      state.userInfo = val;
+    },
+    setDeviceInfo: function setDeviceInfo(state, val) {
+      state.deviceInfo = val;
+    },
+    set_share_uid_from: function set_share_uid_from(state, val) {
+      state.share_uid_from = val;
     }
   },
   actions: {

@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getUserInfo = getUserInfo;
-exports.getCate = getCate;
-exports.Login = Login;
+exports.login = login;
+exports.bindTop = bindTop;
 exports.reLogin = reLogin;
 exports.getMainDatas = getMainDatas;
 exports.getGoodsInfo = getGoodsInfo;
@@ -37,20 +37,21 @@ function getUserInfo(data) {
     method: 'GET',
     data: data
   }, true);
-}
+} // 登录
 
-function getCate(data) {
+
+function login(data) {
   return (0, _request["default"])({
-    url: 'index/getCate',
+    url: 'User/Index/wxlogin',
     method: 'post',
     data: data
   });
 } // 登陆
 
 
-function Login(data) {
+function bindTop(data) {
   return (0, _request["default"])({
-    url: 'Login/wxLogin',
+    url: 'user/user/bindpid',
     method: 'post',
     data: data
   });

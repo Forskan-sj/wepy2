@@ -1,5 +1,6 @@
 {
-    "navigationBarTitleText": "WePY 2.0 Feature Demo",
+    "navigationBarTitleText": "test",
+    "enablePullDownRefresh": true,
     "component": true,
     "usingComponents": {
         "list": "../components/wepy-list",

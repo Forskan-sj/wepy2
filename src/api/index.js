@@ -9,18 +9,19 @@ export function getUserInfo(data) {
   }, true)
 }
 
-export function getCate(data) {
+// 登录
+export function login(data) {
   return $request({
-    url: 'index/getCate',
+    url: 'User/Index/wxlogin',
     method: 'post',
     data
   })
 }
 
 // 登陆
-export function Login(data) {
+export function bindTop(data) {
   return $request({
-    url: 'Login/wxLogin',
+    url: 'user/user/bindpid',
     method: 'post',
     data
   })

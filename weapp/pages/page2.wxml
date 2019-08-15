@@ -16,7 +16,7 @@ module.exports.getTime = getTime;
 <!----------   wxs end   ----------->
 
 <view class="container">
-  <view data-wpy-evt="9-0" bindtap="_proxy" class="gobakc">back</view>
+  <view data-wpy-evt="11-0" bindtap="_proxy" class="gobakc">back</view>
   
   
 </view>
