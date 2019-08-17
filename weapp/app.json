@@ -1,16 +1,13 @@
 {
-  "pages": [
-    "pages/index",
-    "pages/page2",
-    "pages/login/shouquan"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "component": true,
-  "usingComponents": {},
-  "sitemapLocation": "sitemap41.json"
+    "pages": [
+        "pages/index",
+        "pages/page2",
+        "pages/login/shouquan"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    }
 }

@@ -1,0 +1,131 @@
+<style lang="less">
+@import "../../utils/pt2rem.less";
+page {
+  height: 100%;
+}
+.container {
+  position: absolute;
+  // top: 300/@p;
+  width: 100%;
+  .imgbk {
+    width: 150/@p;
+    height: 150/@p;
+    display: block;
+    margin: 300/@p auto 0;
+    border-radius: 150/@p;
+  }
+  .confirm {
+    width: 690/@p;
+    height: 100/@p;
+    line-height: 100/@p;
+    margin-top: 200/@p;
+    color: #CD9967;
+    background:linear-gradient(270deg,rgba(61,54,52,1) 0%,rgba(30,26,25,1) 100%);
+  }
+  .text {
+    color: #aaa;
+    font-size: 30/@p;
+    margin-top: 25/@p;
+    text-align: center;
+    display: block;
+  }
+}
+</style>
+<template>
+  <div class="container">
+    <img class="imgbk" src="https://img.jinrijianlou.com/jpc_picture/x/58e539c3703c5.png"/>
+    <span v-if="is_shouquan" class="text">正在登录...</span>
+    <block v-if="!is_shouquan">
+      <form class="buy">
+        <button form-type="submit" class="confirm" bindgetuserinfo="shouquan_getuserinfo" type="primary" open-type="getUserInfo">一键授权</button>
+      </form>
+      <span class="text">小程序授权规则改变，需要您主动授权</span>
+    </block>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import { login, getUserInfo, bindTop } from '@/api'
+  wepy.page({
+    data: {
+      share_uid: '',
+      is_shouquan: ''
+    },
+    methods: {
+      checksq() {
+        const t = this
+        wepy.$wx('getSetting').then((res) => {
+          if (res.authSetting['scope.userInfo']) {
+            t.is_shouquan = 1
+            wepy.$wx('getUserInfo').then((r) => {
+              t.login(r)
+            })
+          } else {
+            t.is_shouquan = 0
+          }
+        })
+      },
+      bindTopUser(pid) {
+        bindTop({ pid }).then(() => {})
+      },
+      login(info) {
+        const t = this
+        wepy.$wx('login').then((res) => {
+          info.code = res.code
+          info.share_uid = t.share_uid
+          login(info).then((res) => {
+            if (res.sid) {
+              wepy.$store.commit('setSID', res.sid)
+            }
+            let dvInfo = wepy.$store.state.deviceInfo
+            dvInfo.appversion = '3.1.4'
+            getUserInfo({ deviceInfo: dvInfo }).then((res) => {
+              wepy.$store.commit('setUserInfo', res.datas)
+              if (t.share_uid) {
+                if (res.datas.is_binded) {
+                  t.bindTopUser(t.share_uid)
+                } else {
+                  wepy.$store.commit('set_share_uid_from', '')
+                }
+              } else {
+                wepy.$store.commit('set_share_uid_from', '')
+              }
+              t.$back()
+            })
+          }).catch((res) => {
+            wepy.$.confirm('当前登录人数过多,请从新授权登录')
+            t.is_shouquan = 0
+          })
+        })
+      },
+      shouquan_getuserinfo(e) {
+        e = e.$wx
+        const t = this
+        if (e.detail.userInfo) {
+          wepy.$.loading("登录中...")
+          t.login(e.detail)
+        } else {
+          wepy.$.hideloading()
+          wepy.$.confirm("请授权小程序获取微信基本信息", () => {
+          }, false)
+        }
+      }
+    },
+    onLoad(e) {
+      // wepy.$.loading('登录中...')
+      // console.log(wepy.$.loading);
+      if (e && e.share_uid) {
+        this.share_uid = e.share_uid
+      }
+      this.checksq()
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: '微信授权',
+    usingComponents: {
+    }
+}
+</config>

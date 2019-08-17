@@ -1,0 +1,10 @@
+
+<view class="s-nullpage">
+  <view class="s-nullpage-middle">
+    <label style="z-index:10;" class="iconfont bgimg s-nowiff"></label>
+    <view class="s-null-tip">
+      
+      <label>页面加载中 请稍后…</label>
+    </view>
+  </view>
+</view>

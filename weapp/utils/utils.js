@@ -9,6 +9,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 function setCache(key, value) {
   try {
     wx.setStorageSync(key, value);
+    console.log(key, value);
   } catch (e) {}
 }
 
@@ -132,7 +133,7 @@ function previewImage() {
 
 function trim() {
   var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  return str.replace(/(^\s+)|(\s+$)/g, "");
+  return str.replace(/(^\s+)|(\s+$)/g, '');
 }
 
 function testing(content) {
@@ -179,7 +180,7 @@ function testing(content) {
 }
 
 function getstringwidth(text) {
-  return text.replace(/[\u0391-\uFFE5]/g, "aa").length;
+  return text.replace(/[\u0391-\uFFE5]/g, 'aa').length;
 }
 
 function saveFormIds(formId) {
@@ -191,6 +192,18 @@ function saveFormIds(formId) {
   formIds = formIds ? formIds + ',' + formId : formId;
 
   _store["default"].commit('setFormIds', formIds);
+}
+
+function getSceneParams(scene) {
+  var params = getParas(scene);
+  var page = getPage(params.f);
+  var pagePras = getPageParas(params);
+  var sceneParams = {
+    uid: params.s,
+    share_from: page,
+    share_page: '/pages/' + page + '/' + page + (params.p ? pagePras : '')
+  };
+  return sceneParams;
 }
 
 function getParas(scene) {
@@ -257,7 +270,7 @@ function getPageParas(obj) {
 //     .replace(/\/span>/g, '/text>')
 //     .replace(/↵/g, '')
 //     .replace(/&mdash/g, '——')
-//     .replace(/&ldquo;/g, '"')
+//     .replace(/&ldquo;/g, ''')
 //     .replace(/&rdquo;/g, ' ')
 //   console.log(temp.split('/view>'))
 //   // return
@@ -340,7 +353,7 @@ function parseTime(time, cFormat) {
     s: date.getSeconds(),
     a: date.getDay()
   };
-  var time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, function (result, key) {
+  var timeStr = format.replace(/{(y|m|d|h|i|s|a)+}/g, function (result, key) {
     var value = formatObj[key]; // Note: getDay() returns 0 on Sunday
 
     if (key === 'a') {
@@ -353,7 +366,7 @@ function parseTime(time, cFormat) {
 
     return value || 0;
   });
-  return time_str;
+  return timeStr;
 } // 秒转为时分秒
 
 
@@ -364,7 +377,7 @@ function formatSeconds2(value) {
 
   var theTime2 = 0; // 小时
 
-  var theTime3 = 0; //天
+  var theTime3 = 0; // 天
 
   if (theTime > 60) {
     theTime1 = parseInt(theTime / 60);
@@ -381,18 +394,18 @@ function formatSeconds2(value) {
     }
   }
 
-  var result = "" + parseInt(theTime) + "秒";
+  var result = '' + parseInt(theTime) + '秒';
 
   if (theTime1 > 0) {
-    result = "" + parseInt(theTime1) + "分" + result;
+    result = '' + parseInt(theTime1) + '分' + result;
   }
 
   if (theTime2 > 0) {
-    result = "" + parseInt(theTime2) + "小时" + result;
+    result = '' + parseInt(theTime2) + '小时' + result;
   }
 
   if (theTime3 > 0) {
-    result = "" + parseInt(theTime3) + "天" + result;
+    result = '' + parseInt(theTime3) + '天' + result;
   }
 
   return result;
@@ -424,6 +437,7 @@ module.exports = {
   getParas: getParas,
   getPage: getPage,
   getPageParas: getPageParas,
+  getSceneParams: getSceneParams,
   // 时间格式化
   formatSeconds: formatSeconds,
   formatSeconds2: formatSeconds2,

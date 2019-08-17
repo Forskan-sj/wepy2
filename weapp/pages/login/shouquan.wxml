@@ -4,7 +4,7 @@
   <label wx:if="{{ is_shouquan }}" class="text">正在登录...</label>
   <block wx:if="{{ !is_shouquan }}">
     <form class="buy">
-      <button form-type="submit" type="primary" open-type="getUserInfo" data-wpy-evt="12-5" bindgetuserinfo="_proxy" class="confirm">一键授权</button>
+      <button form-type="submit" type="primary" open-type="getUserInfo" data-wpy-evt="10-0" bindgetuserinfo="_proxy" class="confirm">一键授权</button>
     </form>
     <label class="text">小程序授权规则改变，需要您主动授权</label>
   </block>

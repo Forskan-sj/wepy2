@@ -1,8 +1,8 @@
-import store from '../store';
-
+import store from '../store'
 function setCache(key, value) {
   try {
     wx.setStorageSync(key, value)
+    console.log(key, value);
   } catch (e) { }
 }
 
@@ -104,7 +104,7 @@ function previewImage(url = '', urls = []) {
 }
 
 function trim(str = '') {
-  return str.replace(/(^\s+)|(\s+$)/g, "")
+  return str.replace(/(^\s+)|(\s+$)/g, '')
 }
 
 function testing(content, type = 'str') {
@@ -116,31 +116,31 @@ function testing(content, type = 'str') {
   switch (type) {
     case 'mobile':
       ruls = /^1[3456789]\d{9}$/
-      break;
+      break
     case 'card':
       ruls = /^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/
-      break;
+      break
     case 'username':
       ruls = /^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]+$/
-      break;
+      break
     case 'price':
       ruls = /^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/
-      break;
+      break
     case 'password':
       ruls = /^.{4,20}$/
-      break;
+      break
     case 'num':
       ruls = /^([1-9][0-9]*)$/
-      break;
+      break
     default:
       ruls = /^.{1,500}$/
-      break;
+      break
   }
   return ruls.test(content)
 }
 
 function getstringwidth(text) {
-  return text.replace(/[\u0391-\uFFE5]/g, "aa").length
+  return text.replace(/[\u0391-\uFFE5]/g, 'aa').length
 }
 
 function saveFormIds(formId) {
@@ -152,13 +152,25 @@ function saveFormIds(formId) {
   store.commit('setFormIds', formIds)
 }
 
+function getSceneParams(scene) {
+  let params = getParas(scene)
+  let page = getPage(params.f)
+  let pagePras = getPageParas(params)
+  let sceneParams = {
+    uid: params.s,
+    share_from: page,
+    share_page: '/pages/' + page + '/' + page + (params.p ? pagePras : '')
+  }
+  return sceneParams
+}
+
 function getParas(scene) {
   // scene=f_g-s_274-p_g.2528*p.128
   let obj = strToObj(scene, '-', '_')
-  if (obj.p){
+  if (obj.p) {
     obj.p = strToObj(obj.p, '*', '.')
   }
-  return obj;
+  return obj
 }
 function strToObj(str, seperator1, seperator2) {
   let arr = str.split(seperator1)
@@ -172,32 +184,32 @@ function strToObj(str, seperator1, seperator2) {
 }
 function getPage(name) {
   const obj = {
-    'i':'index',
-    'n':'Newindex',
-    'g':'gooddetail',
-    'p':'huichangdetail',
+    'i': 'index',
+    'n': 'Newindex',
+    'g': 'gooddetail',
+    'p': 'huichangdetail',
     'l': 'live'
   }
   return obj[name]
 }
 function getPageParas(obj) {
   let page = getPage(obj.f)
-  let paras = obj.p;
+  let paras = obj.p
   let dic = {
-    'gooddetail':{
-      'p':'place_id',
-      'g':'id'
+    'gooddetail': {
+      'p': 'place_id',
+      'g': 'id'
     },
-    'huichangdetail':{
-      'p':'id'
+    'huichangdetail': {
+      'p': 'id'
     }
   }
-  let mirror = dic[page];
-  let paraStr = '?';
+  let mirror = dic[page]
+  let paraStr = '?'
   for (let k in paras) {
-    paraStr = paraStr + mirror[k] + '=' + paras[k] + '&';
+    paraStr = paraStr + mirror[k] + '=' + paras[k] + '&'
   }
-  return paraStr;
+  return paraStr
 }
 // function ht2xl(html) {
 //   const temp = html.replace(/<div/g, '<view')
@@ -208,7 +220,7 @@ function getPageParas(obj) {
 //     .replace(/\/span>/g, '/text>')
 //     .replace(/↵/g, '')
 //     .replace(/&mdash/g, '——')
-//     .replace(/&ldquo;/g, '"')
+//     .replace(/&ldquo;/g, ''')
 //     .replace(/&rdquo;/g, ' ')
 
 //   console.log(temp.split('/view>'))
@@ -251,7 +263,7 @@ function formatSeconds(value, callback) {
     'day': day,
     'hour': hour,
     'minute': minute,
-    'second': second,
+    'second': second
   }
   return time
 }
@@ -277,7 +289,7 @@ function parseTime(time, cFormat) {
     s: date.getSeconds(),
     a: date.getDay()
   }
-  const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
+  const timeStr = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
     let value = formatObj[key]
     // Note: getDay() returns 0 on Sunday
     if (key === 'a') {
@@ -288,14 +300,14 @@ function parseTime(time, cFormat) {
     }
     return value || 0
   })
-  return time_str
+  return timeStr
 }
 // 秒转为时分秒
 function formatSeconds2(value) {
   let theTime = parseInt(value) // 秒
   let theTime1 = 0 // 分
   let theTime2 = 0 // 小时
-  let theTime3 = 0 //天
+  let theTime3 = 0 // 天
   if (theTime > 60) {
     theTime1 = parseInt(theTime / 60)
     theTime = parseInt(theTime % 60)
@@ -308,15 +320,15 @@ function formatSeconds2(value) {
       }
     }
   }
-  var result = "" + parseInt(theTime) + "秒"
+  var result = '' + parseInt(theTime) + '秒'
   if (theTime1 > 0) {
-    result = "" + parseInt(theTime1) + "分" + result
+    result = '' + parseInt(theTime1) + '分' + result
   }
   if (theTime2 > 0) {
-    result = "" + parseInt(theTime2) + "小时" + result
+    result = '' + parseInt(theTime2) + '小时' + result
   }
   if (theTime3 > 0) {
-    result = "" + parseInt(theTime3) + "天" + result
+    result = '' + parseInt(theTime3) + '天' + result
   }
   return result
 }
@@ -354,6 +366,7 @@ module.exports = {
   getParas,
   getPage,
   getPageParas,
+  getSceneParams,
 
   // 时间格式化
   formatSeconds,

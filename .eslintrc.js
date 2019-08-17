@@ -19,6 +19,7 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
+    'enversion': '6',
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
@@ -28,3 +29,4 @@ module.exports = {
     'space-before-function-paren': 0
   }
 }
+

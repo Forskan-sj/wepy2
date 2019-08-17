@@ -72,7 +72,7 @@ module.exports.getTime = getTime;
 </wxs>
 <template>
   <div class="container">
-    <!-- <div class="userinfo" @tap="handleViewTap">
+    <div class="userinfo" @tap="handleViewTap">
       <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
       <div class="userinfo-nickname">{{ userInfo.nickName }}</div>
     </div>
@@ -149,7 +149,7 @@ module.exports.getTime = getTime;
         </view>
       </slide-view>
      </panel>
-     <div class="jump" @tap="jump({a: '1', b: false, c: [1,2]})">页面跳转</div> -->
+     <div class="jump" @tap="jump({a: '1', b: false, c: [1,2]})">页面跳转</div>
     <!--toast /-->
     <!-- <swiper indicator-dots="{{false}}"
       vertical="{{true}}"
@@ -161,7 +161,6 @@ module.exports.getTime = getTime;
         </swiper-item>
       </block>
     </swiper> -->
-    <beforeLoad></beforeLoad>
   </div>
 </template>
 
@@ -384,7 +383,6 @@ function fs(type) {
     navigationBarTitleText: 'test',
     "enablePullDownRefresh": true,
     usingComponents: {
-      beforeLoad: '~@/components/beforeLoad',
       panel: '~@/components/panel',
       counter: '~counter',
       list: '../components/list',
