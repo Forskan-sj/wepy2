@@ -8,7 +8,7 @@ export default new Vuex.Store({
     sid: '',
     share_uid_from: '', // 从分享链接进来的uid
     userInfo: {}, // 用户信息
-    deviceInfo: {}, // 设备信息
+    welcome: {}, // 设备信息
   },
   mutations: {
     increment (state) {
@@ -26,8 +26,8 @@ export default new Vuex.Store({
     setUserInfo (state, val) {
       state.userInfo = val
     },
-    setDeviceInfo (state, val) {
-      state.deviceInfo = val
+    setwWlcome (state, val) {
+      state.welcome = val
     },
     set_share_uid_from (state, val) {
       state.share_uid_from = val

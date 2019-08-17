@@ -18,7 +18,7 @@ export function login(data) {
   })
 }
 
-// 登陆
+// 绑定上级
 export function bindTop(data) {
   return $request({
     url: 'user/user/bindpid',
@@ -26,11 +26,12 @@ export function bindTop(data) {
     data
   })
 }
-// 重新登陆
-export function reLogin(data) {
+
+// 首页接口
+export function getAllData(data, login) {
   return $request({
-    url: 'Login/reLogin',
-    method: 'post',
+    url: login ? 'User/place/newIndex' : 'Home/newIndex/index',
+    method: 'get',
     data
   })
 }

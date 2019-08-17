@@ -184,6 +184,8 @@ function getstringwidth(text) {
 }
 
 function saveFormIds(formId) {
+  console.log(formId);
+
   if (!formId || formId === 'the formId is a mock one') {
     return;
   }

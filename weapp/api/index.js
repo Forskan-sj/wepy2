@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getUserInfo = getUserInfo;
 exports.login = login;
 exports.bindTop = bindTop;
-exports.reLogin = reLogin;
+exports.getAllData = getAllData;
 exports.getMainDatas = getMainDatas;
 exports.getGoodsInfo = getGoodsInfo;
 exports.getAddress = getAddress;
@@ -46,7 +46,7 @@ function login(data) {
     method: 'post',
     data: data
   });
-} // 登陆
+} // 绑定上级
 
 
 function bindTop(data) {
@@ -55,13 +55,13 @@ function bindTop(data) {
     method: 'post',
     data: data
   });
-} // 重新登陆
+} // 首页接口
 
 
-function reLogin(data) {
+function getAllData(data, login) {
   return (0, _request["default"])({
-    url: 'Login/reLogin',
-    method: 'post',
+    url: login ? 'User/place/newIndex' : 'Home/newIndex/index',
+    method: 'get',
     data: data
   });
 } // 首页商品列表

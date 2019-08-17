@@ -1,19 +1,14 @@
 
-
+import wepy from '@wepy/core';
 export default {
   data: {
-    mixin: 'MixinTe333xt'
+    mixin: ''
   },
   methods: {
-    mixintap () {
-      this.mixin = 'MixinText' + (Math.random() + '').substring(3, 7);
-      // console.log('mixin method tapdddd');
+    cllectformid: function (e) {
+      wepy.$.saveFormIds(e.$wx.detail.formId);
     },
-    tap () {
-      // console.log('tap in mixin');
-    }
   },
   created () {
-    // console.log('created in mixin');
   }
 }

@@ -1,0 +1,165 @@
+<style lang="less">
+@import "~@/utils/pt2rem.less";
+.LiveWin{
+  width: 702/@p;
+  height: 300/@p;
+  margin: 0 auto;
+  background: rgba(254,247,241,1);
+  border-radius: 8/@p 8/@p 0 0;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  border:4/@p solid rgba(233,179,126,1);
+  .LiveCover{
+    width: 256/@p;
+    height: 296/@p;
+    position: relative;
+    .LiveStatus{
+      font-size: 22/@p;
+      color: #fff;
+      position: absolute; 
+      top: 12/@p;
+      left: 22/@p;
+      width: 120/@p;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(1,1,1,.4);
+      border-radius: 8/@p;
+      .status{
+        width: 16/@p;
+        height: 16/@p;
+        border-radius: 50%;
+      }
+    }
+    .image{
+      width: 100%;
+      height: 100%;
+    }
+    .LiveNum{
+      /* width:142/@p;
+      height:40/@p; */
+      display: inline-block;
+      padding: 4px 8/@p;
+      height: 28/@p;
+      background:rgba(0,0,0,.5);
+      border-radius:8/@p 0px 0px 0px;
+      /* opacity:0.4; */
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      font-size: 20/@p;
+      z-index: 1;
+      right: 0;
+    }
+  }
+  .LiveInfo{
+    width: 445/@p;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 18/@p 10/@p 18/@p 18/@p;
+    .LiveTitle{
+      color: #111111;
+      font-size: 34/@p;
+      font-weight: 600;
+      height: 48/@p;
+      overflow: hidden;
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 48/@p;
+    }
+    .LiveExplain{
+      font-size: 22/@p;
+      color: #7b7b7b;
+      height: 32/@p;
+      line-height: 32/@p;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+    .LiveList{
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 32/@p;
+      .goods{
+        width: 100/@p;
+        height: 100/@p;
+        border-radius: 8/@p;
+        background: gray;
+        overflow: hidden;
+        .image{
+          width: 100/@p;
+          height: 100/@p;
+        }
+      }
+      .goodsNum{
+        font-size: 20/@p;
+        text-align: center;
+        padding: 20/@p 10/@p 24/@p;
+        background: #FFF3F3;
+        color: #FE1969;
+      }
+    }
+  }
+}
+</style>
+<template>
+  <div class="LiveWin" catchtap="gozhibo">
+    <form report-submit="{{true}}" bindsubmit="cllectformid" class="formblock">
+      <button form-type="submit" class="button_nostyle">
+      </button>
+    </form>
+    <div class="LiveCover">
+      <div class="LiveStatus">
+        <div class="status" style="background: {{anchorInfo.type == 1 ? '#03c725' : 'red'}}"></div>
+        <div>{{anchorInfo.type == 1?"直播中":"精彩回放" }}</div>
+      </div>
+      <image class="image" :src="anchorInfo.anchor_head" mode="aspectFill"/>
+      <div class="LiveNum" v-if="anchorInfo.type == 1">共{{livecount}}人观看{{anchorInfo.type == 1?"中":""}}</div>
+    </div>
+    <div class="LiveInfo">
+      <div class="LiveTitle">{{anchorInfo.anchor_name}}</div>
+      <div class="LiveExplain">{{anchorInfo.anchor_slogan}}</div>
+      <div class="LiveList">
+        <div class="goods" v-for="(item, index) in faddishlist.goods_list" v-if="index < 3" :key="index">
+          <image class="image" :src="item.goods_image"/>
+        </div>
+        <div class="goodsNum">
+          <div>{{faddishlist.goods_list.length}}件</div>
+          <div>直播商品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</template>
+<script>
+import wepy from '@wepy/core';
+import formid from '@/mixins/test'
+
+  wepy.component({
+    props: {
+      anchorInfo: {},
+      faddishlist: {}
+    },
+    mixins: [formid],
+    methods: {
+      // 前往直播
+      gozhibo: function () {
+        if (this.anchorInfo.type) {
+          wx.navigateTo({ url: '/pages/live/live' })
+        } else {
+          wx.navigateTo({ url: '/pages/playback/playback' })
+        }
+      },
+    },
+    created() {
+    }
+  });
+</script>
+<config>
+{
+}
+</config>

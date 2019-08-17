@@ -1,4 +1,7 @@
 <style lang="less">
+page{
+  height: 100%;
+}
 
 </style>
 
@@ -23,7 +26,6 @@ wepy.app({
     userInfo: null,
     ceshi: 'ssss22'
   },
-
   onLaunch(e) {
     const t = this
     if (e.query.scene) {
@@ -53,7 +55,6 @@ wepy.app({
     wepy.$wx('getSystemInfo').then((res) => {
       t.$options.globalData.deviceinfo = res
     })
-    
   },
 
   methods: {
@@ -64,15 +65,37 @@ wepy.app({
 <config>
 {
     pages: [
-      'pages/index',
-      'pages/page2',
+      'pages/index/index',
+      'pages/user/index',
       'pages/login/shouquan'
     ],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      backgroundTextStyle: "dark",
+      backgroundColor: "#fff",
+      navigationBarBackgroundColor: "#fff",
+      navigationBarTitleText: "辣妈总管",
+      navigationBarTextStyle: "black",
+      enablePullDownRefresh: false
+    },
+    tabBar: {
+      color: "#7B7B7B",
+      selectedColor: "#fff",
+      borderStyle: "white",
+      backgroundColor: "#1E1A19",
+      list: [
+        {
+          pagePath: "pages/index/index",
+          iconPath: "images/index-no.png",
+          selectedIconPath: "images/index-yes.png",
+          text: "首页"
+        },
+        {
+          pagePath: "pages/user/index",
+          iconPath: "images/user-no.png",
+          selectedIconPath: "images/user-yes.png",
+          text: "我的"
+        }
+      ]
     }
 }
 </config>

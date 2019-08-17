@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _x = _interopRequireDefault(require('../vendor.js')(2));
+var _x = _interopRequireDefault(require('../vendor.js')(1));
 
 var _core = _interopRequireDefault(require('../vendor.js')(0));
 
@@ -22,7 +22,7 @@ var _default = new _x["default"].Store({
     // 从分享链接进来的uid
     userInfo: {},
     // 用户信息
-    deviceInfo: {} // 设备信息
+    welcome: {} // 设备信息
 
   },
   mutations: {
@@ -41,8 +41,8 @@ var _default = new _x["default"].Store({
     setUserInfo: function setUserInfo(state, val) {
       state.userInfo = val;
     },
-    setDeviceInfo: function setDeviceInfo(state, val) {
-      state.deviceInfo = val;
+    setwWlcome: function setwWlcome(state, val) {
+      state.welcome = val;
     },
     set_share_uid_from: function set_share_uid_from(state, val) {
       state.share_uid_from = val;

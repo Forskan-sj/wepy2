@@ -6,7 +6,7 @@ var _eventHub = _interopRequireDefault(require('common/eventHub.js'));
 
 var _store = _interopRequireDefault(require('store/index.js'));
 
-var _x = _interopRequireDefault(require('vendor.js')(2));
+var _x = _interopRequireDefault(require('vendor.js')(1));
 
 var _wxapi = _interopRequireDefault(require('utils/wxapi.js'));
 
@@ -64,4 +64,4 @@ _core["default"].app({
     });
   },
   methods: {}
-}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} });
+}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1}, {a: 1});

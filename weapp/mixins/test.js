@@ -4,18 +4,20 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _core = _interopRequireDefault(require('../vendor.js')(0));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var _default = {
   data: {
-    mixin: 'MixinTe333xt'
+    mixin: ''
   },
   methods: {
-    mixintap: function mixintap() {
-      this.mixin = 'MixinText' + (Math.random() + '').substring(3, 7); // console.log('mixin method tapdddd');
-    },
-    tap: function tap() {// console.log('tap in mixin');
+    cllectformid: function cllectformid(e) {
+      _core["default"].$.saveFormIds(e.$wx.detail.formId);
     }
   },
-  created: function created() {// console.log('created in mixin');
-  }
+  created: function created() {}
 };
 exports["default"] = _default;

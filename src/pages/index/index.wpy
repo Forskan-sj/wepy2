@@ -1,0 +1,146 @@
+<style lang="less">
+.container{
+  background: #1E1A19;;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.contentBox{
+  /* height: 380rpx; */
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background: #1E1A19;
+  overflow: hidden;
+  position: relative;
+  
+  .GoodInfo{
+    display: flex;
+    flex-direction: column;
+    height: 300rpx;
+    overflow: hidden;
+    width:702rpx;
+    position: relative;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 10rpx 6rpx rgba(1,1,1,0.1);
+    border-radius:12rpx 12rpx 0 0;
+    /* padding: 32rpx 24rpx; */
+    box-sizing: border-box;
+    margin:0 auto;
+    margin-bottom: 40rpx;
+    border: 4rpx solid rgba(233,179,126,1);
+    .slide-image{
+      width: 702rpx;
+      height: 300rpx;
+    }
+  }
+}
+swiper{
+  height: 300rpx;
+}
+</style>
+<template>
+  <div class="container">
+    <div v-if="isdata" class="contentBox">
+      <swiper indicator-dots="{{false}}"
+      bindchange="swiperChange"
+      autoplay="{{true}}">
+        <block>
+          <swiper-item>
+            <swiperLive :anchorInfo="Anchorinfo" :faddishlist="faddishlist"></swiperLive>
+          </swiper-item>
+        </block>
+        <block wx:for="{{swiperList}}" wx:key="index">
+          <swiper-item>
+            <navigator class="GoodInfo swiperGoodInfo" url="{{item.url}}">
+              <form report-submit="{{true}}" bindsubmit="cllectformid" class="formblock">
+                <button form-type="submit" class="button_nostyle">
+                </button>
+              </form>
+              <image src="{{item.img}}" class="slide-image" />
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </div>
+    <beforeLoad v-else></beforeLoad>
+  </div>
+</template>
+
+<script>
+import { getAllData } from '@/api/index'
+import wepy from '@wepy/core'
+import { mapState } from '@wepy/x';
+import store from '../../store';
+import formid from '@/mixins/test'
+
+  wepy.page({
+    store,
+    data: {
+      isdata: false,
+      shareInfo: '',
+      swiperList: [],
+      faddishlist: [],
+      Anchorinfo: {},
+      isAnchor: false,
+      hbinfo: {},
+      ishbfix: false,
+      tabList: [],
+      curSwiperIndex: 0
+    },
+    mixins: [formid],
+
+    computed: {
+    },
+    methods: {
+      swiperChange(e) {
+        this.curSwiperIndex = e.$wx.detail.current
+      },
+      getbaolist(res) {
+
+      },
+      getShare() {
+        const t = this
+        wx.request({
+          url: 'https://img.jinrijianlou.com/Api/index_share.json',
+          success: (res) => {
+            wepy.$store.commit('setwWlcome', res.data.datas.welcome)
+            t.shareInfo = res.data.datas
+          }
+        })
+      }
+    },
+    created () {
+      const t = this
+      getAllData({}, false).then((re) => {
+        const res = re.datas
+        t.getShare()
+        t.getbaolist(res.faddish)
+        t.swiperList = res.ad
+        t.faddishlist = res.faddish1
+        t.Anchorinfo = res.anchor
+        t.isAnchor = true
+        t.hbinfo = res.kaquan
+        t.ishbfix = res.kaquan.draw_status == 1
+        t.tabList = res.tabInfo
+        t.isdata = true
+      })
+      
+    },
+    onPullDownRefresh: function () {
+      wx.stopPullDownRefresh();
+    }
+  });
+</script>
+<config>
+{
+  navigationBarBackgroundColor: "#1E1A19",
+  navigationBarTextStyle: "white",
+  backgroundColor: "#1E1A19",
+  enablePullDownRefresh: true,
+  usingComponents: {
+    beforeLoad: '~@/components/beforeLoad',
+    swiperLive: '~@/components/baseCom/swiperLive'
+  }
+}
+</config>

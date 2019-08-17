@@ -1,0 +1,29 @@
+
+<view data-wpy-evt="15-44" catchtap="_proxy" class="LiveWin">
+  <form report-submit="{{true}}" data-wpy-evt="15-45" bindsubmit="_proxy" class="formblock">
+    <button form-type="submit" class="button_nostyle">
+    </button>
+  </form>
+  <view class="LiveCover">
+    <view class="LiveStatus">
+      <view style="background: {{anchorInfo.type == 1 ? '#03c725' : 'red'}}" class="status"></view>
+      <view>{{anchorInfo.type == 1?"直播中":"精彩回放" }}</view>
+    </view>
+    <image src="{{ anchorInfo.anchor_head }}" mode="aspectFill" class="image"></image>
+    <view wx:if="{{ anchorInfo.type == 1 }}" class="LiveNum">共{{livecount}}人观看{{anchorInfo.type == 1?"中":""}}</view>
+  </view>
+  <view class="LiveInfo">
+    <view class="LiveTitle">{{anchorInfo.anchor_name}}</view>
+    <view class="LiveExplain">{{anchorInfo.anchor_slogan}}</view>
+    <view class="LiveList">
+      <view wx:for="{{ faddishlist.goods_list }}" wx:for-index="index" wx:for-item="item" wx:key="index" wx:if="{{ index < 3 }}" key="{{ index }}" class="goods">
+        <image src="{{ item.goods_image }}" class="image"></image>
+      </view>
+      <view class="goodsNum">
+        <view>{{faddishlist.goods_list.length}}件</view>
+        <view>直播商品</view>
+      </view>
+    </view>
+  </view>
+</view>
+

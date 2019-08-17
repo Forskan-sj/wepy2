@@ -1,0 +1,24 @@
+
+<view class="container">
+  <view wx:if="{{ isdata }}" class="contentBox">
+    <swiper indicator-dots="{{false}}" autoplay="{{true}}" data-wpy-evt="8-26" bindchange="_proxy">
+      <block>
+        <swiper-item>
+          <swiperLive bind_init="_initComponent" anchorInfo="{{ Anchorinfo }}" faddishlist="{{ faddishlist }}"></swiperLive>
+        </swiper-item>
+      </block>
+      <block wx:for="{{swiperList}}" wx:key="index">
+        <swiper-item>
+          <navigator url="{{item.url}}" class="GoodInfo swiperGoodInfo">
+            <form report-submit="{{true}}" data-wpy-evt="8-27" bindsubmit="_proxy" class="formblock">
+              <button form-type="submit" class="button_nostyle">
+              </button>
+            </form>
+            <image src="{{item.img}}" class="slide-image"></image>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <beforeLoad bind_init="_initComponent" wx:else></beforeLoad>
+</view>

@@ -1,4 +1,10 @@
 <style lang="less">
+.container{
+  background: black;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
   input {
     border: 1rpx solid #ccc;
     display: inline-block;
@@ -347,9 +353,9 @@ function fs(type) {
       // })
       // console.log(this.$store.state.counter);
       console.log(this.$app.$options.globalData);
-      getUserInfo({id: 1}).then((res) => {
-        console.log(res);
-      })
+      // getUserInfo({id: 1}).then((res) => {
+      //   console.log(res);
+      // })
       wepy.$wx('getSystemInfo').then((res) => {
         // console.log(res);
         wepy.$store.commit('setDeviceInfo', res)

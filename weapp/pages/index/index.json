@@ -1,0 +1,11 @@
+{
+    "navigationBarBackgroundColor": "#1E1A19",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1E1A19",
+    "enablePullDownRefresh": true,
+    "component": true,
+    "usingComponents": {
+        "beforeLoad": "../../components/beforeLoad",
+        "swiperLive": "../../components/baseCom/swiperLive"
+    }
+}

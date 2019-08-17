@@ -93,532 +93,532 @@ _core["default"].page({
 
     this.checksq();
   }
-}, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+}, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.shouquan_getuserinfo($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'10-0': {"getuserinfo": function proxy () {
+  }}}, models: {} }, {info: {"components":{},"on":{}}, handlers: {'9-0': {"getuserinfo": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
