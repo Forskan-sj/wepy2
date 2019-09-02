@@ -7,7 +7,7 @@ exports.getUserInfo = getUserInfo;
 exports.login = login;
 exports.bindTop = bindTop;
 exports.getAllData = getAllData;
-exports.getMainDatas = getMainDatas;
+exports.getGoodInfo = getGoodInfo;
 exports.getGoodsInfo = getGoodsInfo;
 exports.getAddress = getAddress;
 exports.getDefaultAddress = getDefaultAddress;
@@ -67,10 +67,10 @@ function getAllData(data, login) {
 } // 首页商品列表
 
 
-function getMainDatas(data) {
+function getGoodInfo(data) {
   return (0, _request["default"])({
-    url: 'index/index',
-    method: 'post',
+    url: 'Home/newIndex/goods',
+    method: 'get',
     data: data
   });
 } // 获取商品详情

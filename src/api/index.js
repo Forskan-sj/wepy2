@@ -37,10 +37,10 @@ export function getAllData(data, login) {
 }
 
 // 首页商品列表
-export function getMainDatas(data) {
+export function getGoodInfo(data) {
   return $request({
-    url: 'index/index',
-    method: 'post',
+    url: 'Home/newIndex/goods',
+    method: 'get',
     data
   })
 }

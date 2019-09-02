@@ -116,7 +116,7 @@
         <div class="status" style="background: {{anchorInfo.type == 1 ? '#03c725' : 'red'}}"></div>
         <div>{{anchorInfo.type == 1?"直播中":"精彩回放" }}</div>
       </div>
-      <image class="image" :src="anchorInfo.anchor_head" mode="aspectFill"/>
+      <img class="image" :src="anchorInfo.anchor_head" mode="aspectFill"/>
       <div class="LiveNum" v-if="anchorInfo.type == 1">共{{livecount}}人观看{{anchorInfo.type == 1?"中":""}}</div>
     </div>
     <div class="LiveInfo">
@@ -124,7 +124,7 @@
       <div class="LiveExplain">{{anchorInfo.anchor_slogan}}</div>
       <div class="LiveList">
         <div class="goods" v-for="(item, index) in faddishlist.goods_list" v-if="index < 3" :key="index">
-          <image class="image" :src="item.goods_image"/>
+          <img class="image" :src="item.goods_image"/>
         </div>
         <div class="goodsNum">
           <div>{{faddishlist.goods_list.length}}件</div>
@@ -138,7 +138,6 @@
 <script>
 import wepy from '@wepy/core';
 import formid from '@/mixins/test'
-
   wepy.component({
     props: {
       anchorInfo: {},

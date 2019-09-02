@@ -1,0 +1,166 @@
+.formblock {
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.formblock .button_nostyle {
+  background: red;
+  width: 100%;
+  height: 100%;
+}
+.GoodInfo {
+  display: flex;
+  flex-direction: column;
+  height: 494rpx;
+  overflow: hidden;
+  width: 702rpx;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 0px 10rpx 6rpx rgba(1, 1, 1, 0.1);
+  border-radius: 12rpx;
+  /* padding: 32rpx 24rpx; */
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+  border: 4rpx solid #e9b37e;
+}
+.GoodInfo image,
+.GoodInfo img {
+  width: 100%;
+  height: 310rpx;
+}
+.GoodInfo .emptyCover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.7);
+}
+.GoodInfo .emptyCover image,
+.GoodInfo .emptyCover img {
+  width: 268rpx;
+  height: 150rpx;
+  margin: 80rpx 218rpx;
+}
+.GoodInfo .hwg {
+  width: 80rpx !important;
+  height: 52rpx !important;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 32rpx;
+}
+.GoodInfo .GoodsConten {
+  position: relative;
+  height: 202rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 24rpx 30rpx;
+}
+.GoodInfo .GoodsConten .GoodsTitle {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.GoodInfo .GoodsConten .GoodsPrice {
+  height: 58rpx;
+  display: flex;
+  align-items: baseline;
+  color: #FE1969;
+}
+.GoodInfo .GoodsConten .GoodsPrice label:nth-child(1),
+.GoodInfo .GoodsConten .GoodsPrice span:nth-child(1) {
+  font-size: 24rpx;
+  font-weight: 600;
+}
+.GoodInfo .GoodsConten .GoodsPrice label:nth-child(2),
+.GoodInfo .GoodsConten .GoodsPrice span:nth-child(2) {
+  font-size: 40rpx;
+  margin-right: 8rpx;
+  font-weight: 600;
+}
+.GoodInfo .GoodsConten .GoodsPrice label:nth-child(3),
+.GoodInfo .GoodsConten .GoodsPrice span:nth-child(3) {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-right: 8rpx;
+}
+.GoodInfo .GoodsConten .GoodsPrice label:nth-child(4),
+.GoodInfo .GoodsConten .GoodsPrice span:nth-child(4) {
+  font-size: 22rpx;
+  color: #7b7b7b;
+  text-decoration: line-through;
+}
+.GoodInfo .GoodsConten .GoodsPrice label:nth-child(5),
+.GoodInfo .GoodsConten .GoodsPrice span:nth-child(5) {
+  padding: 0 28rpx;
+  height: 36rpx;
+  margin: 0 0rpx 0 20rpx;
+  box-sizing: border-box;
+  /* background: rgba(254,25,105,.7); */
+  border-radius: 22rpx;
+  text-align: center;
+  border: 2rpx solid #e9b37e;
+  line-height: 32rpx;
+  color: #E9B37E;
+  font-size: 22rpx;
+}
+.GoodInfo .GoodsConten .GoodsPrice label:nth-child(6),
+.GoodInfo .GoodsConten .GoodsPrice span:nth-child(6) {
+  flex: 1;
+}
+.GoodInfo .GoodsConten .GoodsPrice .border_0 {
+  border: 0!important;
+}
+.GoodInfo .GoodsConten .progressBox {
+  display: flex;
+  align-items: baseline;
+  font-size: 20rpx;
+  color: #7b7b7b;
+}
+.GoodInfo .GoodsConten .progressBox .progress {
+  margin: 10rpx 0 15rpx;
+  height: 16rpx;
+  overflow: hidden;
+  width: 220rpx;
+  background: #1E1A19;
+  border-radius: 16rpx;
+  position: relative;
+}
+.GoodInfo .GoodsConten .progressBox .progress .percentage {
+  height: 16rpx;
+  background: #FACE15;
+  border-radius: 16px;
+  font-size: 20rpx;
+  color: #fff;
+  animation: animate-progress 1s ease-out;
+  animation-iteration-count: 1;
+}
+.GoodInfo .GoodsConten .progressBox .progressText {
+  flex: 1;
+  margin-left: 10rpx;
+}
+.GoodInfo .GoodsConten .progressBox .bugBtn {
+  float: right;
+  width: 158rpx;
+  height: 50rpx;
+  background: linear-gradient(270deg, #3d3634 0%, #1e1a19 100%);
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50rpx;
+  color: #CD9967;
+  font-size: 22rpx;
+}
+@keyframes animate-progress {
+  0% {
+    width: 0%;
+  }
+}
+

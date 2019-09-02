@@ -1,24 +1,47 @@
 
 <view class="container">
   <view wx:if="{{ isdata }}" class="contentBox">
-    <swiper indicator-dots="{{false}}" autoplay="{{true}}" data-wpy-evt="8-26" bindchange="_proxy">
-      <block>
-        <swiper-item>
-          <swiperLive bind_init="_initComponent" anchorInfo="{{ Anchorinfo }}" faddishlist="{{ faddishlist }}"></swiperLive>
-        </swiper-item>
-      </block>
-      <block wx:for="{{swiperList}}" wx:key="index">
-        <swiper-item>
-          <navigator url="{{item.url}}" class="GoodInfo swiperGoodInfo">
-            <form report-submit="{{true}}" data-wpy-evt="8-27" bindsubmit="_proxy" class="formblock">
-              <button form-type="submit" class="button_nostyle">
-              </button>
-            </form>
-            <image src="{{item.img}}" class="slide-image"></image>
-          </navigator>
-        </swiper-item>
-      </block>
-    </swiper>
+    <view class="topswiper">
+      <swiper indicator-dots="{{false}}" autoplay="{{true}}" data-wpy-evt="8-2" bindchange="_proxy">
+        <block>
+          <swiper-item>
+            <swiperLive bind_init="_initComponent" anchorInfo="{{ Anchorinfo }}" faddishlist="{{ faddishlist }}"></swiperLive>
+          </swiper-item>
+        </block>
+        <block wx:for="{{swiperList}}" wx:key="index">
+          <swiper-item>
+            <navigator url="{{item.url}}" class="GoodInfo swiperGoodInfo">
+              <form report-submit="{{true}}" data-wpy-evt="8-3" bindsubmit="_proxy" class="formblock">
+                <button form-type="submit" class="button_nostyle">
+                </button>
+              </form>
+              <image src="{{item.img}}" class="slide-image"></image>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view wx:if="{{ swiperList.length }}" class="swiperdots">
+        <view wx:for="{{ (swiperList.length + 1) }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" class="dots {{ [ curSwiperIndex === index ? 'curSwiperdot' : '' ] }}"></view>
+      </view>
+      <view class="LiveBottom">
+        <view><label class="iconfont icongongyingshang"></label>源头直供</view>
+        <view><label class="iconfont iconzhengpinbaozhang"></label>辣妈严选</view>
+        <view><label class="iconfont icontuihuobaozhang"></label>天放心退</view>
+        <view><label class="iconfont iconservicezhengpinbaozhang"></label>正品保障</view>
+      </view>
+    </view>
+    <view wx:if="{{ tabList.length }}" class="tabList">
+      <view wx:for="{{tabList}}" wx:key="index" class="{{index === 0 ? 'currGoods' : 'zcTitle'}}">
+        <label wx:if="{{ index === 0 }}">{{item.name}}</label>
+        <view wx:if="{{ index === 0 }}" class="underline"></view>
+        <navigator wx:else url="{{'/pages/brandList/brandList?id=' + item.id}}">
+          {{item.name}}
+        </navigator>
+      </view>
+    </view>
+    <view class="GoodsList">
+      <goodItem bind_init="_initComponent" goodItem="{{ item }}" place_id="{{ faddish.id }}" wx:for="{{ faddish.goods_list }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}"></goodItem>
+    </view>
   </view>
   <beforeLoad bind_init="_initComponent" wx:else></beforeLoad>
 </view>

@@ -1,0 +1,10 @@
+
+<view class="wxParse">
+  <block wx:for="{{ wxParseData }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}">
+    <view wx:if="{{ item.tagType === 'block' }}" class="block">
+      <block wx:for="{{ item.nodes }}" wx:for-index="idx" wx:for-item="it" wx:key="idx" key="{{ idx }}">
+        <image lazy-load="{{true}}" wx:if="{{ it.tag === 'img' }}" src="{{ it.attr.src }}" mode="widthFix" alt="" data-wpy-evt="24-1" bindtap="_proxy" data-wpytap-a="{{ idx }}" style="max-width: 100%; height:auto; display: block">
+      </image></block>
+    </view>
+  </block>
+</view>

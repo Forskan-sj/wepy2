@@ -1,6 +1,6 @@
 
-<view data-wpy-evt="15-44" catchtap="_proxy" class="LiveWin">
-  <form report-submit="{{true}}" data-wpy-evt="15-45" bindsubmit="_proxy" class="formblock">
+<view data-wpy-evt="22-0" catchtap="_proxy" class="LiveWin">
+  <form report-submit="{{true}}" data-wpy-evt="22-1" bindsubmit="_proxy" class="formblock">
     <button form-type="submit" class="button_nostyle">
     </button>
   </form>

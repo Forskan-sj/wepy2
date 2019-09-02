@@ -1,0 +1,37 @@
+
+<navigator url="/pages/goods/gooddetail?id={{goodItem.goods_id}}&place_id={{place_id}}" class="GoodInfo">
+  <form report-submit="{{true}}" data-wpy-evt="23-0" bindsubmit="_proxy" class="formblock">
+    <button form-type="submit" class="button_nostyle">
+    </button>
+  </form>
+  <view wx:if="{{ goodItem.goods_num <= 0 }}" class="emptyCover">
+    <image src="https://cdncollege.quansuwangluo.com/image/jianlou/wxapp/emptytext.png"></image>
+  </view>
+  <image wx:if="{{ goodItem.country > 0 }}" src="https://cdncollege.quansuwangluo.com/image/jianlou/wxapp/wgIcon.png" class="hwg"></image>
+  <image src="{{ goodItem.goods_cover }}"></image>
+  <view class="GoodsConten">
+    
+    <view class="GoodsTitle">
+      {{goodItem.country_name + goodItem.goods_name}}
+    </view>
+    <view class="GoodsPrice">
+      <label>￥</label>
+      <label>{{goodItem.zheng}}.</label>
+      <label>{{goodItem.yu}}</label>
+      <label>￥{{goodItem.goods_price}}</label>
+      <label wx:if="{{ goodItem.fanli > 0  }}">赚{{goodItem.fanli}}元</label>
+      <label wx:else class="border_0"></label>
+      <label></label>
+      
+    </view>
+    <view class="progressBox">
+      <view class="progress">
+        <view style="width:{{goodItem.progress}}%;" class="percentage"></view>
+      </view>
+      <view class="progressText">
+        已售{{goodItem.progress}}%
+      </view>
+      <view class="bugBtn">立即购买</view>
+    </view>
+  </view>
+</navigator>

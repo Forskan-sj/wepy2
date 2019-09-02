@@ -1,0 +1,55 @@
+<style lang="less">
+@import "~@/utils/pt2rem.less";
+.container {
+  .wxParse{
+    width: 100%;
+  }
+}
+</style>
+
+<template>
+  <div class="container">
+    <div class="wxParse p-content">
+      <wxParse :wxParseData="article"></wxParse>
+    </div>
+  </div>
+</template>
+<script>
+	var WxParse = require('@/utils/wxParse/wxParse.js');
+  import wepy from '@wepy/core'
+  import { getGoodInfo } from '@/api'
+  wepy.page({
+    data: {
+      good_id: 0,
+      place_id: 0,
+      goodInfo: {},
+      article: {}
+    },
+    methods: {
+      getgoodinfo(id, place_id) {
+        getGoodInfo({ id, place_id }).then((res) => {
+          this.goodInfo = res.datas
+          this.goodInfo.goods_info = this.goodInfo.goods_info.replace(/\<img/gi, '<img style="max-width:100%;height:auto; display: block" ')
+          let a = WxParse.wxParse('article', 'html', this.goodInfo.goods_info, this, 5);
+          this.article = a.nodes
+        })
+      }
+    },
+    onLoad(e) {
+      this.good_id = e.id
+      this.place_id = e.place_id || 0
+    },
+    onShow() {
+      this.getgoodinfo(this.good_id, this.place_id)
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: '商品详情',
+    "enablePullDownRefresh": true,
+    usingComponents: {
+      wxParse: '~@/components/wxParse/wxParse',
+    }
+}
+</config>

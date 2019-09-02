@@ -1,0 +1,41 @@
+<style lang="less">
+@import "~@/utils/pt2rem.less";
+.wxParse{
+  width: 100%;
+  img, image{
+    width: 100%;
+  }
+}
+</style>
+<template>
+  <div class="wxParse">
+    <block v-for="(item, index) in wxParseData" :key="index">
+      <div class="block" v-if="item.tagType === 'block'">
+        <block v-for="(it, idx) in item.nodes" :key="idx">
+          <img @tap="showImg(idx)" lazy-load="{{true}}" v-if="it.tag === 'img'" :src="it.attr.src" mode="widthFix" style="max-width: 100%; height:auto; display: block" alt="">
+        </block>
+      </div>
+    </block>
+  </div>
+</template>
+<script>
+import wepy from '@wepy/core';
+import formid from '@/mixins/test'
+  wepy.component({
+    props: {
+      wxParseData: [],
+    },
+    mixins: [formid],
+    methods: {
+      showImg(index) {
+        console.log(index);
+      }
+    },
+    created() {
+    }
+  });
+</script>
+<config>
+{
+}
+</config>

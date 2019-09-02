@@ -94,6 +94,7 @@ page {
               t.$back()
             })
           }).catch((res) => {
+            console.log(res);
             wepy.$.confirm('当前登录人数过多,请从新授权登录')
             t.is_shouquan = 0
           })

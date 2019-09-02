@@ -1,0 +1,65 @@
+<style lang="less">
+@import "~@/utils/pt2rem.less";
+.s-nullpage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: #bfbfbf;
+  flex-direction: column;
+  .s-nullpage-middle {
+      margin-top: 150/@p;
+      .text{
+        font-size: 250/@p;
+        line-height: 20/@p;
+      }
+  }
+  .s-null-tip {
+    margin-top: -110/@p;
+    .text {
+      display: block;
+      font-size: 28/@p;
+      color: #796A50;
+      padding-top: 100/@p;
+      width: 280/@p;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+.s-nowiff {
+  width: 396/@p;
+  height: 308/@p;
+  background: url('https://img.jinrijianlou.com/jpc_picture/a/58e5788c6eb81.png') no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+}
+</style>
+<template>
+  <div class="s-nullpage">
+    <div class="s-nullpage-middle">
+      <span style="z-index:10;" class="text iconfont bgimg s-nowiff"></span>
+      <div class="s-null-tip">
+        <!-- <text wx:if="{{isStop}}">您的账户因涉嫌违规操作,已被平台关闭...</text> -->
+
+        <span class="text">页面加载中 请稍后…</span>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  import wepy from '@wepy/core';
+  wepy.component({
+    props: {
+      grouplist: {},
+      index: {}
+    },
+    methods: {
+    }
+  });
+</script>
+<config>
+{
+}
+</config>

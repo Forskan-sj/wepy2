@@ -1,0 +1,6 @@
+
+<view class="container">
+  <view class="wxParse p-content">
+    <wxParse bind_init="_initComponent" wxParseData="{{ article }}"></wxParse>
+  </view>
+</view>

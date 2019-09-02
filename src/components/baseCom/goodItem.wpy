@@ -1,0 +1,203 @@
+<style lang="less">
+@import "~@/utils/pt2rem.less";
+.GoodInfo{
+  display: flex;
+  flex-direction: column;
+  height: 494rpx;
+  overflow: hidden;
+  width:702rpx;
+  position: relative;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 10rpx 6rpx rgba(1,1,1,0.1);
+  border-radius:12rpx;
+  /* padding: 32rpx 24rpx; */
+  box-sizing: border-box;
+  margin:0 auto;
+  margin-bottom: 40rpx;
+  border: 4rpx solid rgba(233,179,126,1);
+  image, img{
+    width: 100%;
+    height: 310rpx;
+  }
+  .emptyCover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 30;
+    background: rgba(255, 255, 255, .7);
+    image, img{
+      width: 268rpx;
+      height: 150rpx;
+      margin: 80rpx 218rpx;
+    }
+  }
+  .hwg{
+    width: 80rpx !important;
+    height: 52rpx !important;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 32rpx;
+  }
+  .GoodsConten{
+    position: relative;
+    height: 202rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding:20rpx 24rpx 30rpx;
+    .GoodsTitle{
+      font-size: 28rpx;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+    .GoodsPrice{
+      height: 58rpx;
+      display: flex;
+      align-items: baseline;
+      color: #FE1969;
+      label:nth-child(1), span:nth-child(1){
+        font-size: 24rpx;
+        font-weight: 600;
+      }
+      label:nth-child(2), span:nth-child(2){
+        font-size: 40rpx;
+        margin-right: 8rpx;
+        font-weight: 600;
+      }
+      label:nth-child(3), span:nth-child(3){
+        font-size: 30rpx;
+        font-weight: 600;
+        margin-right: 8rpx;
+      }
+      label:nth-child(4), span:nth-child(4){
+        font-size: 22rpx;
+        color: #7b7b7b;
+        text-decoration:line-through;
+      }
+      label:nth-child(5), span:nth-child(5){
+        padding: 0 28rpx;
+        height: 36rpx;
+        margin:  0 0rpx 0 20rpx;
+        box-sizing: border-box;
+        /* background: rgba(254,25,105,.7); */
+        border-radius: 22rpx;
+        text-align: center;
+        border:2rpx solid rgba(233,179,126,1);
+        line-height: 32rpx;
+        color: #E9B37E;
+        font-size: 22rpx;
+      }
+      label:nth-child(6), span:nth-child(6){
+        flex: 1;
+      }
+      .border_0{
+        border: 0!important;
+      }
+    }
+    .progressBox{
+      display: flex;
+      align-items: baseline;
+      font-size: 20rpx;
+      color: #7b7b7b;
+      .progress{
+        margin: 10rpx 0 15rpx;
+        height: 16rpx;
+        overflow: hidden;
+        width: 220rpx;
+        background:#1E1A19;
+        border-radius:16rpx;
+        position: relative;
+        .percentage{
+          height: 16rpx;
+          background:#FACE15;
+          border-radius:16px;
+          font-size: 20rpx;
+          color: #fff;
+          animation: animate-progress 1s ease-out;
+          animation-iteration-count: 1;
+        }
+      }
+      .progressText{
+        flex: 1;
+        margin-left: 10rpx;
+      }
+      .bugBtn{
+        float: right;
+        width:158rpx;
+        height:50rpx;
+        background:linear-gradient(270deg,rgba(61,54,52,1) 0%,rgba(30,26,25,1) 100%);
+        border-radius:25px;
+        text-align: center;
+        line-height: 50rpx;
+        color: #CD9967;
+        font-size: 22rpx;
+      }
+    }
+  }
+}
+@keyframes animate-progress {
+    0% { width:0%; }
+}
+</style>
+<template>
+  <navigator class="GoodInfo" url="/pages/goods/gooddetail?id={{goodItem.goods_id}}&place_id={{place_id}}" >
+    <form report-submit="{{true}}" bindsubmit="cllectformid" class="formblock">
+      <button form-type="submit" class="button_nostyle">
+      </button>
+    </form>
+    <view v-if="goodItem.goods_num <= 0" class="emptyCover">
+      <img src="https://cdncollege.quansuwangluo.com/image/jianlou/wxapp/emptytext.png"/>
+    </view>
+    <img v-if="goodItem.country > 0" class="hwg" src="https://cdncollege.quansuwangluo.com/image/jianlou/wxapp/wgIcon.png"/>
+    <img :src="goodItem.goods_cover"/>
+    <view class="GoodsConten">
+      <!-- <view class="countryImg" style="background-position: -{{goodItem.py * 75}}px, {{250 - goodItem.px * 50}}px"></view> -->
+      <view class="GoodsTitle">
+        {{goodItem.country_name + goodItem.goods_name}}
+      </view>
+      <view class="GoodsPrice">
+        <span>￥</span>
+        <span>{{goodItem.zheng}}.</span>
+        <span>{{goodItem.yu}}</span>
+        <span>￥{{goodItem.goods_price}}</span>
+        <span v-if="goodItem.fanli > 0 ">赚{{goodItem.fanli}}元</span>
+        <span v-else class="border_0"></span>
+        <span></span>
+        <!-- <text>立即购买</text> && userinfo.level > 0-->
+      </view>
+      <view class="progressBox">
+        <view class="progress">
+          <view class="percentage" style="width:{{goodItem.progress}}%;"></view>
+        </view>
+        <view class="progressText">
+          已售{{goodItem.progress}}%
+        </view>
+        <view class="bugBtn">立即购买</view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<script>
+import wepy from '@wepy/core';
+import formid from '@/mixins/test'
+  wepy.component({
+    props: {
+      place_id: '',
+      goodItem: {}
+    },
+    mixins: [formid],
+    methods: {
+      // 前往直播
+      
+    },
+    created() {
+    }
+  });
+</script>
+<config>
+{
+}
+</config>

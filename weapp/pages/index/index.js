@@ -4,7 +4,7 @@ var _index = require('../../api/index.js');
 
 var _core = _interopRequireDefault(require('../../vendor.js')(0));
 
-var _x = require('../../vendor.js')(1);
+var _x = require('../../vendor.js')(2);
 
 var _store = _interopRequireDefault(require('../../store/index.js'));
 
@@ -18,6 +18,7 @@ _core["default"].page({
     isdata: false,
     shareInfo: '',
     swiperList: [],
+    faddish: [],
     faddishlist: [],
     Anchorinfo: {},
     isAnchor: false,
@@ -32,7 +33,8 @@ _core["default"].page({
     swiperChange: function swiperChange(e) {
       this.curSwiperIndex = e.$wx.detail.current;
     },
-    getbaolist: function getbaolist(res) {},
+    getbaolist: function getbaolist(res) {// init socket
+    },
     getShare: function getShare() {
       var t = this;
       wx.request({
@@ -46,11 +48,16 @@ _core["default"].page({
     }
   },
   created: function created() {
+    var _this = this;
+
     var t = this;
     (0, _index.getAllData)({}, false).then(function (re) {
       var res = re.datas;
+      _this.$app.$options.globalData.defaultToken = res.token;
+      _this.$app.$options.globalData.zhuboinfo = res.anchor;
       t.getShare();
-      t.getbaolist(res.faddish);
+      t.getbaolist();
+      t.faddish = res.faddish;
       t.swiperList = res.ad;
       t.faddishlist = res.faddish1;
       t.Anchorinfo = res.anchor;
@@ -64,112 +71,98 @@ _core["default"].page({
   onPullDownRefresh: function onPullDownRefresh() {
     wx.stopPullDownRefresh();
   }
-}, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+}, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.cllectformid($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.cllectformid($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.cllectformid($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.cllectformid($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.cllectformid($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.cllectformid($event)
       })();
     
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
+  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"../../components/beforeLoad"},"swiperLive":{"path":"../../components/baseCom/swiperLive"},"goodItem":{"path":"../../components/baseCom/goodItem"}},"on":{}}, handlers: {'8-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.swiperChange($event)
       })();
     
-  }},'8-27': {"submit": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.cllectformid($event)
-      })();
-    
-  }}}, models: {} }, {info: {"components":{"beforeLoad":{"path":"..\\..\\components\\beforeLoad"},"swiperLive":{"path":"..\\..\\components\\baseCom\\swiperLive"}},"on":{}}, handlers: {'8-26': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.swiperChange($event)
-      })();
-    
-  }},'8-27': {"submit": function proxy () {
+  }},'8-3': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

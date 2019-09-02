@@ -1,0 +1,30 @@
+<style lang="less">
+@import "~@/utils/pt2rem.less";
+
+</style>
+<template>
+  <div class="goodList">
+    
+  </div>
+  <!--  -->
+</template>
+<script>
+import wepy from '@wepy/core';
+import formid from '@/mixins/test'
+  wepy.component({
+    props: {
+      goodList: []
+    },
+    mixins: [formid],
+    methods: {
+      // 前往直播
+      
+    },
+    created() {
+    }
+  });
+</script>
+<config>
+{
+}
+</config>
